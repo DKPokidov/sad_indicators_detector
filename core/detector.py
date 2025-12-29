@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from utils.utils import DataUtils
+from utils.data_manager import DataUtils
 
 class ZeroDetector:
     '''Класс для валидации показателей социально-экономического развития,
@@ -80,4 +80,4 @@ class ZeroDetector:
     def zero_one_swinger(self, df: pd.DataFrame) -> pd.DataFrame:
         sad_table = self.region_sad_maker(df)
         return sad_table.apply(lambda col: col.apply(self.change_func))
-        
+    
